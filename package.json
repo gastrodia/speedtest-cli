@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gastrodia/speedtest-cli",
   "dependencies": {
-    "http-proxy": "^1.6.2"
+    "http-proxy": "^1.6.2",
+    "url": "^0.10.1"
   }
 }
