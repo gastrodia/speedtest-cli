@@ -10,7 +10,7 @@ httpProxy.createServer(function(req, res, proxy) {
   proxy.proxyRequest(req, res, {
     host    : speedTestSite,
     port    : 80,
-    taget   : speedTestSite + urlObj.path,
+    target   : speedTestSite + urlObj.path,
     enable  : { xforward: true }
   });
 }).listen(3000, function () {
