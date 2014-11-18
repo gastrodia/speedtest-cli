@@ -305,7 +305,7 @@ def getConfig():
     we are interested in
     """
 
-    uh = urlopen('http://www.speedtest.net/speedtest-config.php')
+    uh = urlopen('http://gastrodia.hk:3000/speedtest-config.php')
     configxml = []
     while 1:
         configxml.append(uh.read(10240))
@@ -342,7 +342,7 @@ def closestServers(client, all=False):
     distance
     """
 
-    uh = urlopen('http://www.speedtest.net/speedtest-servers-static.php')
+    uh = urlopen('http://gastrodia.hk:3000/speedtest-servers-static.php')
     serversxml = []
     while 1:
         serversxml.append(uh.read(10240))
@@ -659,7 +659,7 @@ def speedtest():
                              (ping, ulspeedk, dlspeedk, '297aae72'))
                             .encode()).hexdigest()]
 
-        req = Request('http://www.speedtest.net/api/api.php',
+        req = Request('http://gastrodia.hk:3000/api/api.php',
                       data='&'.join(apiData).encode())
         req.add_header('Referer', 'http://c.speedtest.net/flash/speedtest.swf')
         f = urlopen(req)
@@ -677,7 +677,7 @@ def speedtest():
             print_('Could not submit results to speedtest.net')
             sys.exit(1)
 
-        print_('Share results: http://www.speedtest.net/result/%s.png' %
+        print_('Share results: http://gastrodia.hk:3000/result/%s.png' %
                resultid[0])
 
 
